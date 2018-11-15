@@ -1,0 +1,116 @@
+
+Last login: Tue Nov 13 22:00:36 on console
+Shylas-MacBook-Pro:~ sesamuel$ cd /Users/sesamuel/Documents/Unit15/Homework/Unit15
+Shylas-MacBook-Pro:Unit15 sesamuel$ conda create -n belly_button_env python=3.6
+Solving environment: done
+
+## Package Plan ##
+
+  environment location: /anaconda3/envs/belly_button_env
+
+  added / updated specs: 
+    - python=3.6
+
+
+The following NEW packages will be INSTALLED:
+
+    ca-certificates: 2018.03.07-0           
+    certifi:         2018.10.15-py36_0      
+    libcxx:          4.0.1-hcfea43d_1       
+    libcxxabi:       4.0.1-hcfea43d_1       
+    libedit:         3.1.20170329-hb402a30_2
+    libffi:          3.2.1-h475c297_4       
+    ncurses:         6.1-h0a44026_0         
+    openssl:         1.1.1-h1de35cc_0       
+    pip:             18.1-py36_0            
+    python:          3.6.7-haf84260_0       
+    readline:        7.0-h1de35cc_5         
+    setuptools:      40.5.0-py36_0          
+    sqlite:          3.25.2-ha441bb4_0      
+    tk:              8.6.8-ha441bb4_0       
+    wheel:           0.32.2-py36_0          
+    xz:              5.2.4-h1de35cc_4       
+    zlib:            1.2.11-hf3cbc9b_2      
+
+Proceed ([y]/n)? y
+
+Preparing transaction: done
+Verifying transaction: done
+Executing transaction: done
+#
+# To activate this environment, use:
+# > source activate belly_button_env
+#
+# To deactivate an active environment, use:
+# > source deactivate
+#
+
+Shylas-MacBook-Pro:Unit15 sesamuel$ source activate belly_button_env
+(belly_button_env) Shylas-MacBook-Pro:Unit15 sesamuel$ pip install gunicorn
+Collecting gunicorn
+  Using cached https://files.pythonhosted.org/packages/8c/da/b8dd8deb741bff556db53902d4706774c8e1e67265f69528c14c003644e6/gunicorn-19.9.0-py2.py3-none-any.whl
+Installing collected packages: gunicorn
+Successfully installed gunicorn-19.9.0
+(belly_button_env) Shylas-MacBook-Pro:Unit15 sesamuel$ pip install psycopg2
+Collecting psycopg2
+  Downloading https://files.pythonhosted.org/packages/a8/43/61f34c4d91370d239916f7f0fb989d841b9cfe70cd1e16b62c880cea093f/psycopg2-2.7.6.1-cp36-cp36m-macosx_10_6_intel.macosx_10_9_intel.macosx_10_9_x86_64.macosx_10_10_intel.macosx_10_10_x86_64.whl (1.5MB)
+    100% |████████████████████████████████| 1.5MB 8.7MB/s 
+Installing collected packages: psycopg2
+Successfully installed psycopg2-2.7.6.1
+(belly_button_env) Shylas-MacBook-Pro:Unit15 sesamuel$ pip install flask
+Collecting flask
+  Using cached https://files.pythonhosted.org/packages/7f/e7/08578774ed4536d3242b14dacb4696386634607af824ea997202cd0edb4b/Flask-1.0.2-py2.py3-none-any.whl
+Collecting Werkzeug>=0.14 (from flask)
+  Using cached https://files.pythonhosted.org/packages/20/c4/12e3e56473e52375aa29c4764e70d1b8f3efa6682bef8d0aae04fe335243/Werkzeug-0.14.1-py2.py3-none-any.whl
+Collecting Jinja2>=2.10 (from flask)
+  Using cached https://files.pythonhosted.org/packages/7f/ff/ae64bacdfc95f27a016a7bed8e8686763ba4d277a78ca76f32659220a731/Jinja2-2.10-py2.py3-none-any.whl
+Collecting itsdangerous>=0.24 (from flask)
+  Using cached https://files.pythonhosted.org/packages/76/ae/44b03b253d6fade317f32c24d100b3b35c2239807046a4c953c7b89fa49e/itsdangerous-1.1.0-py2.py3-none-any.whl
+Collecting click>=5.1 (from flask)
+  Using cached https://files.pythonhosted.org/packages/fa/37/45185cb5abbc30d7257104c434fe0b07e5a195a6847506c074527aa599ec/Click-7.0-py2.py3-none-any.whl
+Collecting MarkupSafe>=0.23 (from Jinja2>=2.10->flask)
+  Using cached https://files.pythonhosted.org/packages/da/fc/2979c425ad23d528d6ac2e1f3efdc28e572fa1e1fbd5a75171cbdd7ddaa5/MarkupSafe-1.1.0-cp36-cp36m-macosx_10_6_intel.whl
+Installing collected packages: Werkzeug, MarkupSafe, Jinja2, itsdangerous, click, flask
+Successfully installed Jinja2-2.10 MarkupSafe-1.1.0 Werkzeug-0.14.1 click-7.0 flask-1.0.2 itsdangerous-1.1.0
+(belly_button_env) Shylas-MacBook-Pro:Unit15 sesamuel$ pip install flask-sqlalchemy
+Collecting flask-sqlalchemy
+  Using cached https://files.pythonhosted.org/packages/a1/44/294fb7f6bf49cc7224417cd0637018db9fee0729b4fe166e43e2bbb1f1c8/Flask_SQLAlchemy-2.3.2-py2.py3-none-any.whl
+Collecting SQLAlchemy>=0.8.0 (from flask-sqlalchemy)
+  Downloading https://files.pythonhosted.org/packages/e2/0a/05b7d13618ad41c108a6c2b886af83bf9bb7e35f8951227abb18b1330745/SQLAlchemy-1.2.14.tar.gz (5.7MB)
+    100% |████████████████████████████████| 5.7MB 6.7MB/s 
+Requirement already satisfied: Flask>=0.10 in /anaconda3/envs/belly_button_env/lib/python3.6/site-packages (from flask-sqlalchemy) (1.0.2)
+Requirement already satisfied: itsdangerous>=0.24 in /anaconda3/envs/belly_button_env/lib/python3.6/site-packages (from Flask>=0.10->flask-sqlalchemy) (1.1.0)
+Requirement already satisfied: Werkzeug>=0.14 in /anaconda3/envs/belly_button_env/lib/python3.6/site-packages (from Flask>=0.10->flask-sqlalchemy) (0.14.1)
+Requirement already satisfied: Jinja2>=2.10 in /anaconda3/envs/belly_button_env/lib/python3.6/site-packages (from Flask>=0.10->flask-sqlalchemy) (2.10)
+Requirement already satisfied: click>=5.1 in /anaconda3/envs/belly_button_env/lib/python3.6/site-packages (from Flask>=0.10->flask-sqlalchemy) (7.0)
+Requirement already satisfied: MarkupSafe>=0.23 in /anaconda3/envs/belly_button_env/lib/python3.6/site-packages (from Jinja2>=2.10->Flask>=0.10->flask-sqlalchemy) (1.1.0)
+Building wheels for collected packages: SQLAlchemy
+  Running setup.py bdist_wheel for SQLAlchemy ... done
+  Stored in directory: /Users/sesamuel/Library/Caches/pip/wheels/86/c8/99/8d6049a373070743a79ada4cf9798f8130cc8e2dfcd66e0e9d
+Successfully built SQLAlchemy
+Installing collected packages: SQLAlchemy, flask-sqlalchemy
+Successfully installed SQLAlchemy-1.2.14 flask-sqlalchemy-2.3.2
+(belly_button_env) Shylas-MacBook-Pro:Unit15 sesamuel$ pip install pandas
+Collecting pandas
+  Using cached https://files.pythonhosted.org/packages/78/78/50ef81a903eccc4e90e278a143c9a0530f05199f6221d2e1b21025852982/pandas-0.23.4-cp36-cp36m-macosx_10_6_intel.macosx_10_9_intel.macosx_10_9_x86_64.macosx_10_10_intel.macosx_10_10_x86_64.whl
+Collecting numpy>=1.9.0 (from pandas)
+  Using cached https://files.pythonhosted.org/packages/74/68/2b00ba3c7390354db2a1706291750b6b7e911f6f79c0bd2184ae04f3c6fd/numpy-1.15.4-cp36-cp36m-macosx_10_6_intel.macosx_10_9_intel.macosx_10_9_x86_64.macosx_10_10_intel.macosx_10_10_x86_64.whl
+Collecting pytz>=2011k (from pandas)
+  Using cached https://files.pythonhosted.org/packages/f8/0e/2365ddc010afb3d79147f1dd544e5ee24bf4ece58ab99b16fbb465ce6dc0/pytz-2018.7-py2.py3-none-any.whl
+Collecting python-dateutil>=2.5.0 (from pandas)
+  Using cached https://files.pythonhosted.org/packages/74/68/d87d9b36af36f44254a8d512cbfc48369103a3b9e474be9bdfe536abfc45/python_dateutil-2.7.5-py2.py3-none-any.whl
+Collecting six>=1.5 (from python-dateutil>=2.5.0->pandas)
+  Using cached https://files.pythonhosted.org/packages/67/4b/141a581104b1f6397bfa78ac9d43d8ad29a7ca43ea90a2d863fe3056e86a/six-1.11.0-py2.py3-none-any.whl
+Installing collected packages: numpy, pytz, six, python-dateutil, pandas
+Successfully installed numpy-1.15.4 pandas-0.23.4 python-dateutil-2.7.5 pytz-2018.7 six-1.11.0
+(belly_button_env) Shylas-MacBook-Pro:Unit15 sesamuel$ python initdb.py
+Traceback (most recent call last):
+  File "initdb.py", line 1, in <module>
+    from belly_button.app import db
+ModuleNotFoundError: No module named 'belly_button'
+(belly_button_env) Shylas-MacBook-Pro:Unit15 sesamuel$ python initdb.py
+Traceback (most recent call last):
+  File "initdb.py", line 1, in <module>
+    from Unit15.app import db
+ModuleNotFoundError: No module named 'Unit15'
+(belly_button_env) Shylas-MacBook-Pro:Unit15 sesamuel$ 
